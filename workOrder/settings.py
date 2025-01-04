@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'web.apps.WebConfig',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'utils.md.AuthMiddleware',
 ]
 
 ROOT_URLCONF = "workOrder.urls"
@@ -74,10 +76,14 @@ WSGI_APPLICATION = "workOrder.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+DATABASES={
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'workOrder',#数据库名字
+        'USER': 'root',
+        'PASSWORD': 'sunnanxuan0828',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
     }
 }
 
@@ -122,3 +128,32 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+import os
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
+
+
+
+
+# #######################菜单#########################################
+UNICOM_MENU={
+    'leader':[
+        {'text':'工单模板','url':'/tpl/'},
+        {'text':'我的工单','url':'/my/'},
+        {'text':'工单审批','url':'/checkout/'},
+
+    ],
+    'user':[
+        {'text':'我的工单','url':'/my/'},
+    ]
+}
+
+
+
+UNICOM_PERMISSION={
+    "leader":{'home','tpl','tpl_edit','tpl_delete','my','my_add','my_add_plus','checkout','checkout_action','media',},
+    'user':{'home','my','my_add','my_add_plus'}
+}
