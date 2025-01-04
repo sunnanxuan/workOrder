@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from web.views import account,tpl
+from web.views import account,tpl,my
 
 
 urlpatterns = [
@@ -29,9 +29,9 @@ urlpatterns = [
 
     path('tpl/', tpl.tpl,name='tpl'),
     path('tpl/<int:pk>/edit/', tpl.tpl_edit,name='tpl_edit'),
-    #path('my/', my.my,name='my'),
-    #path('my/add/', my.my_add,name='my_add'),
-    #path('my/add/plus/', my.my_add_plus,name='my_add_plus'),
+    path('my/', my.my,name='my'),
+    path('my/add/', my.my_add,name='my_add'),
+    path('my/add/plus/', my.my_add_plus,name='my_add_plus'),
     #path('checkout/', checkout.checkout,name='checkout'),
     #path('checkout/action/<int:action>/<int:oid>/', checkout.checkout_action,name='checkout_action'),
 

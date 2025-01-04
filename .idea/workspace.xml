@@ -32,7 +32,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/web",
+    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/web/views",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,6 +43,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/views" />
+      <recent name="$PROJECT_DIR$/web/templates" />
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -91,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
-      <workItem from="1736033143557" duration="1025000" />
+      <workItem from="1736033143557" duration="1409000" />
     </task>
     <servers />
   </component>

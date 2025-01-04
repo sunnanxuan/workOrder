@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-th-list"></span>  我的工单
+
+            <a class="btn btn-success btn-xs " style="float: right;margin-left: 15px;" onclick="showAdd();">
+                <span class="glyphicon glyphicon-folder-open"></span>  创建工单
+            </a>
+            <a class="btn btn-success btn-xs" style="float: right;" href="/my/add/">
+                <span class="glyphicon glyphicon-share"></span>  创建工单
+            </a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>内容描述</th>
+                <th>审批者</th>
+                <th>状态</th>
+                <th>创建时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in queryset %}
+                <tr>
+                    <td>{{ obj.id }}</td>
+                    <td>{{ obj.tpl.title }}</td>
+                    <td>{{ obj.desc }}</td>
+                    <td>{{ obj.leader.username }}</td>
+                    <td>{{ obj.get_status_display }}</td>
+                    <td>{{ obj.create_date}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <ul class="pagination">
+        {{ pager_string }}
+    </ul>
+
+    <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">创建工单</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="myForm" class="form-horizontal" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="clearfix">
+                            {% for filed in form %}
+                                <div class="form-group" style="margin-bottom: 20px">
+                                    <label class="col-sm-2 control-label">{{ filed.label }}</label>
+                                    <div class="col-sm-10" style="position: relative">
+                                        {{ filed }}
+                                        <span class="error-message" style="color: red; position: absolute"></span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="hideAdd()">取 消</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmAdd()">确 认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+{% block js %}
+    <script>
+
+        function showAdd() {
+            $('#myAddModal').modal('show');
+
+            $(".error-message").empty();
+        }
+
+        function hideAdd() {
+            $('#myAddModal').modal('hide');
+        }
+
+        function confirmAdd() {
+            //1.获取数据
+            var data=$("#myForm").serialize();
+
+
+            //2.1清楚错误信息
+            $(".error-message").empty();
+
+            //2.2发送请求
+            $.ajax({
+                url: "/my/add/plus/",
+                type: "POST",
+                data:data,
+                dataType: "JSON",
+
+                success: function (res) {
+
+                    if (res.status) {
+
+                        $('#myAddModal').modal('hide');
+                        location.href = location.href;
+                        //location.reload();
+                    } else {
+                        //{'status':False,'error':{'tpl':['这个字段不能为空']}}
+                        //alert("创建失败")
+                        $.each(res.error,function (key,valueList){
+                            console.log(key,valueList);
+                            $('#id_'+key).next().text(valueList[0])
+                        })
+                    }
+                }
+            })
+
+        }
+    </script>
+{% endblock %}
