@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workOrder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workOrder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workOrder/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workOrder/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +28,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Django Server.workOrder.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -58,6 +55,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="workOrder.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -93,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
-      <workItem from="1736033143557" duration="557000" />
+      <workItem from="1736033143557" duration="1025000" />
     </task>
     <servers />
   </component>

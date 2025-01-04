@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %}">
+    <style>
+        .box {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+
+            box-shadow: 10px 10px 10px rgb(0 0 0 / 5%);
+        }
+
+        .box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- <img src="{% static 'images/m1.png' %}"> -->
+<!-- <a href="" class="btn btn-danger">删除</a> -->
+
+
+<div class="box">
+    <h2>用户登录</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            <span style="color: red;">{{ field.errors.0 }}</span>
+        </div>
+        {% endfor %}
+
+        <input type="submit" class="btn btn-primary" value="提交"/>
+        <span style="color: red;">{{ error }}</span>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
