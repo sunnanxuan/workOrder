@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-floppy-disk"></span>  新建工单模板
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" method="post" novalidate>
+                {% csrf_token %}
+                <div class="clearfix">
+                    {% for filed in form %}
+                        <div class="col-sm-6">
+                            <div class="form-group" style="margin-bottom: 20px">
+                                <label class="col-sm-2 control-label">{{ filed.label }}</label>
+                                <div class="col-sm-10" style="position: relative">
+                                    {{ filed }}
+                                    <span style="color: red; position: absolute">{{ filed.errors.0 }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">保 存</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-th-list"></span>  工单模板列表
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>审批者</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in queryset %}
+                <tr>
+                    <td>{{ obj.id }}</td>
+                    <td>{{ obj.title }}</td>
+                    <td>{{ obj.leader.username }}</td>
+                    <td>
+                        <a href="/tpl/{{ obj.id }}/edit/" class="btn btn-primary btn-xs">编辑</a>
+                        <a class="btn btn-danger btn-xs" onclick="showDelete({{ obj.id }})">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <ul class="pagination">
+        {{ pager_string }}
+    </ul>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+                <h4>是否确定删除？</h4>
+                <p>确定删除后，数据将永远从数据库中被删除，无法恢复，请谨慎删除。</p>
+                <p>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete();">确定删除</button>
+                    <button type="button" class="btn btn-default" onclick="hideDelete();">取消</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    <script>
+    var DELETE_ID;
+
+        function showDelete(id) {
+            //1.获取要删除的ID
+            DELETE_ID=id;
+
+            //2.弹出删除框
+            $('#myDeleteModal').modal('show');
+        }
+
+        function hideDelete() {
+            $('#myDeleteModal').modal('hide');
+        }
+
+        function confirmDelete(){
+            //1.获取要删除的ID
+            console.log("要删除的ID->",DELETE_ID);
+
+            //需要将请求发送到后端，获取要删除的ID，根据ID删除; ->ajax
+            $.ajax({
+                url: "/tpl/"+DELETE_ID + "/delete/",
+                type:"GET",
+                dataType:"JSON",
+
+                success: function (res) {
+                    if (res.status){
+                        //删除成功
+                        $('#myDeleteModal').modal('hide');
+                        location.href=location.href;
+                        //location.reload();
+                    }else {
+                        //删除失败
+                        alert("删除失败")
+                    }
+                }
+            })
+
+        }
+    </script>
+{% endblock %}

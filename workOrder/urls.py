@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from web.views import account
+from web.views import account,tpl
 
 
 urlpatterns = [
@@ -27,8 +27,8 @@ urlpatterns = [
 
     path('home/', account.home,name='home'),
 
-    #path('tpl/', tpl.tpl,name='tpl'),
-    #path('tpl/<int:pk>/edit/', tpl.tpl_edit,name='tpl_edit'),
+    path('tpl/', tpl.tpl,name='tpl'),
+    path('tpl/<int:pk>/edit/', tpl.tpl_edit,name='tpl_edit'),
     #path('my/', my.my,name='my'),
     #path('my/add/', my.my_add,name='my_add'),
     #path('my/add/plus/', my.my_add_plus,name='my_add_plus'),
