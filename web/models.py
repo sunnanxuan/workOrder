@@ -35,6 +35,7 @@ class Template(models.Model):
 
 class Order(models.Model):
     """工单表"""
+    id = models.AutoField(primary_key=True, verbose_name="ID")
     user=models.ForeignKey(verbose_name='发起者',to='UserInfo',on_delete=models.CASCADE,related_name='users')
     tpl = models.ForeignKey(verbose_name='模板', to='Template', on_delete=models.CASCADE)
     leader=models.ForeignKey(verbose_name='审批者',to='UserInfo',on_delete=models.CASCADE,related_name='leaders')
@@ -44,6 +45,7 @@ class Order(models.Model):
     create_date=models.DateTimeField(verbose_name='创建时间')
     update_date = models.DateTimeField(verbose_name='更新时间',null=True,blank=True)
     desc = models.TextField(verbose_name='描述', blank=True, null=True, max_length=500)
+    files= models.CharField(max_length=255, blank=True, null=True, verbose_name="附件")
 
 
 
