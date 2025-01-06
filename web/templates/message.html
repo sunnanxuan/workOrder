@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-envelope"></span> 我的消息
+        </div>
+        <div class="panel-body">
+            <!-- 消息列表 -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>发信人</th>
+                        <th>消息内容</th>
+                        <th>发送时间</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in queryset %}
+                        <tr style="background-color: {% if not message.is_read %}#ffffff{% else %}#f2f2f2{% endif %};">
+                            <td>{{ message.sender }}</td>
+                            <td>{{ message.content }}</td>
+                            <td>{{ message.created_at|date:"Y-m-d H:i:s" }}</td>
+                            <td>
+                                {% if message.is_read %}
+                                    已读
+                                {% else %}
+                                    未读
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">暂无消息</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            {{ pager_string|safe }}
+        </div>
+    </div>
+{% endblock %}

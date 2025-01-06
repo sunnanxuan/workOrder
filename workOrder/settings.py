@@ -155,6 +155,6 @@ UNICOM_MENU={
 
 
 UNICOM_PERMISSION={
-    "leader":{'home','tpl','tpl_edit','tpl_delete','my','my_add','my_add_plus','checkout','checkout_action','media',},
-    'user':{'home','my','my_add','my_add_plus'}
+    "leader":{'home','tpl','tpl_edit','tpl_delete','my','my_add','my_add_plus','checkout','checkout_action','media','message'},
+    'user':{'home','my','my_add','my_add_plus','message'}
 }

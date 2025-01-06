@@ -1,19 +1,15 @@
 from django.shortcuts import render,redirect
 from web import models
 from utils.pagination import Pagination
-from utils.bootstrap import BootStrapModelForm
 from datetime import datetime
 from django.http import JsonResponse
 import os
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from web.forms import MyModelForm
 
 
 
-class MyModelForm(BootStrapModelForm):
-    class Meta:
-        model=models.Order
-        fields=['tpl','desc']
 
 
 def my(request):
@@ -79,6 +75,21 @@ def my_add(request):
     upload(instance, uploaded_files)  # 处理文件上传
 
     instance.save()
+
+    message_content = f"有来自 {instance.user.username} 的工单尚未审批，工单编号：{instance.id}，请尽快处理。"
+
+    # 创建 Message 对象
+
+    new_message = models.Message(
+        sender='系统消息',
+        receiver=instance.leader,  # 审批人是工单的 leader
+        content=message_content,
+        created_at=datetime.now(),
+        is_read=False  # 初始状态为未读
+    )
+
+    # 保存消息
+    new_message.save()
 
     return redirect('/my/')
 

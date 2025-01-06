@@ -6,21 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/19/图1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/14/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/15/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/16/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/16/《晨曦》作者：周而复始.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/16/从鱼.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/16/穿到星际养皇帝.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/17/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/17/《晨曦》作者：周而复始.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/17/从鱼.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/17/穿到星际养皇帝.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/checkout.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/checkout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views/my.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/my.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workOrder/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workOrder/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/urls.py" afterDir="false" />
@@ -33,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -53,11 +45,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.workOrder.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/web/static/images",
+    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/media/avatar/张三",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,11 +61,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media/avatar/张三" />
+      <recent name="$PROJECT_DIR$/media/avatar" />
       <recent name="$PROJECT_DIR$/web/static/images" />
       <recent name="$PROJECT_DIR$/web/templates" />
       <recent name="$PROJECT_DIR$/web/views" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
-      <workItem from="1736033143557" duration="14654000" />
+      <workItem from="1736033143557" duration="21016000" />
     </task>
     <servers />
   </component>

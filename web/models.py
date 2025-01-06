@@ -15,6 +15,7 @@ class UserInfo(models.Model):
     role=models.CharField(verbose_name='角色',choices=role_choices,max_length=12)
     username=models.CharField(verbose_name='用户名',max_length=32)
     password=models.CharField(verbose_name='密码',max_length=64)
+    avatar = models.FileField(verbose_name='头像', upload_to='avatar/', default='avatar/默认头像.png')
 
     def __str__(self):
         return self.username
@@ -51,7 +52,18 @@ class Order(models.Model):
 
 
 
+class Message(models.Model):
+    sender = models.CharField(verbose_name='发信人', max_length=32)
+    receiver = models.ForeignKey(to='UserInfo', verbose_name='收信人', on_delete=models.CASCADE)
+    content = models.TextField(verbose_name="消息内容")
+    created_at = models.DateTimeField(verbose_name="发送时间")
+    is_read = models.BooleanField(default=False, verbose_name="是否已读")
 
-class Info(models.Model):
-    name=models.CharField(verbose_name='姓名',max_length=32)
-    avatar=models.FileField(verbose_name='头像',upload_to='avatar/')
+
+    class Meta:
+        ordering = ['-created_at']  # 按照创建时间倒序排序
+
+
+
+
+
