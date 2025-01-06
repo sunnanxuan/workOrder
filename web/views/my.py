@@ -39,16 +39,18 @@ def upload(instance, files):
         os.makedirs(folder_path)  # 如果文件夹不存在，创建文件夹
 
     # 存储文件，并保存文件夹路径
+    files_paths=[]
     for file in files:
         # 使用文件系统存储文件
         fs = FileSystemStorage(location=folder_path)
-        fs.save(file.name,file)  # 保存文件
+        file_path = fs.save(file.name,file)  # 保存文件
+        files_paths.append(os.path.join(folder_path, file_path))
 
     # 更新实例的文件夹路径字段
-    instance.files= folder_path  # 假设模型中有 files_folder 字段
+    instance.files= files_paths  # 假设模型中有 files_folder 字段
     instance.save()
+    return
 
-    return folder_path  # 返
 
 
 
@@ -71,9 +73,9 @@ def my_add(request):
     form.instance.create_date=datetime.now()
     instance = form.save()
 
-    if 'files' in request.FILES:
-        uploaded_files = request.FILES.getlist('files')
-        upload(instance, uploaded_files)  # 处理文件上传
+
+    uploaded_files = request.FILES.getlist('files')
+    upload(instance, uploaded_files)  # 处理文件上传
 
     instance.save()
 

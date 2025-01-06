@@ -45,7 +45,7 @@ class Order(models.Model):
     create_date=models.DateTimeField(verbose_name='创建时间')
     update_date = models.DateTimeField(verbose_name='更新时间',null=True,blank=True)
     desc = models.TextField(verbose_name='描述', blank=True, null=True, max_length=500)
-    files= models.CharField(max_length=255, blank=True, null=True, verbose_name="附件")
+    files = models.JSONField(default=list, blank=True, null=True, verbose_name="附件")
 
 
 

@@ -22,6 +22,7 @@
                 <th>审批者</th>
                 <th>状态</th>
                 <th>创建时间</th>
+                <th>附件</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                     <td>{{ obj.leader.username }}</td>
                     <td>{{ obj.get_status_display }}</td>
                     <td>{{ obj.create_date}}</td>
+                    <td></td>
                 </tr>
             {% endfor %}
             </tbody>

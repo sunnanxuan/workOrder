@@ -7,7 +7,7 @@
     <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/my_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/my_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/my.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views/my.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/my.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
-      <workItem from="1736033143557" duration="6296000" />
+      <workItem from="1736033143557" duration="8653000" />
     </task>
     <servers />
   </component>
