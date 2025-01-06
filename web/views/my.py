@@ -39,15 +39,16 @@ def upload(instance, files):
         os.makedirs(folder_path)  # 如果文件夹不存在，创建文件夹
 
     # 存储文件，并保存文件夹路径
-    files_paths=[]
+    files_paths = []
     for file in files:
         # 使用文件系统存储文件
         fs = FileSystemStorage(location=folder_path)
-        file_path = fs.save(file.name,file)  # 保存文件
-        files_paths.append(os.path.join(folder_path, file_path))
+        file_path = fs.save(file.name, file)  # 保存文件
+        relative_file_path = os.path.join(settings.MEDIA_URL, folder_name, file_path)
+        files_paths.append(relative_file_path)
 
     # 更新实例的文件夹路径字段
-    instance.files= files_paths  # 假设模型中有 files_folder 字段
+    instance.files = files_paths  # 假设模型中有 files 字段
     instance.save()
     return
 

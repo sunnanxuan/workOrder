@@ -6,14 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/14/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/15/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/16/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/16/《晨曦》作者：周而复始.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/16/从鱼.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/16/穿到星际养皇帝.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/17/《佛说》作者：AyeAyeCaptain.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/17/《晨曦》作者：周而复始.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/17/从鱼.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/17/穿到星际养皇帝.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/templates/my.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/my.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views/my.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/my.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workOrder/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workOrder/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/workOrder/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,7 +57,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/web/templates",
+    "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/web/static/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +68,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/static/images" />
       <recent name="$PROJECT_DIR$/web/templates" />
       <recent name="$PROJECT_DIR$/web/views" />
       <recent name="$PROJECT_DIR$/web" />
@@ -96,11 +119,22 @@
       <option name="presentableId" value="Default" />
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
-      <workItem from="1736033143557" duration="8653000" />
+      <workItem from="1736033143557" duration="14654000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/web/templates/checkout.html</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
