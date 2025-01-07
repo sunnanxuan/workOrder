@@ -43,6 +43,8 @@ urlpatterns = [
     path('checkout/action/<int:action>/<int:oid>/', checkout.checkout_action,name='checkout_action'),
 
     path('message/', message.message,name='message'),
+    path('message/mark-as-read/<int:message_id>/', message.mark_as_read, name='mark_as_read'),
+    path('message/delete/<int:message_id>/', message.delete_message, name='delete_message'),
 
 
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}, name='media'),

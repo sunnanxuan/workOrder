@@ -14,9 +14,10 @@
                         <th>消息内容</th>
                         <th>发送时间</th>
                         <th>状态</th>
+                        <th>操作</th>
                     </tr>
                 </thead>
-                <tbody>
+                 <tbody>
                     {% for message in queryset %}
                         <tr style="background-color: {% if not message.is_read %}#ffffff{% else %}#f2f2f2{% endif %};">
                             <td>{{ message.sender }}</td>
@@ -29,10 +30,18 @@
                                     未读
                                 {% endif %}
                             </td>
+                            <td>
+                                {% if not message.is_read %}
+                                    <!-- 标记为已读按钮 -->
+                                    <a href="{% url 'mark_as_read' message.id %}" class="btn btn-sm btn-primary">标记已读</a>
+                                {% endif %}
+                                <!-- 删除按钮 -->
+                                <a href="{% url 'delete_message' message.id %}" class="btn btn-sm btn-danger" onclick="return confirm('确认删除这条消息吗？');">删除</a>
+                            </td>
                         </tr>
                     {% empty %}
                         <tr>
-                            <td colspan="4" class="text-center">暂无消息</td>
+                            <td colspan="5" class="text-center">暂无消息</td>
                         </tr>
                     {% endfor %}
                 </tbody>

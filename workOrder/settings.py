@@ -65,6 +65,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # 你的自定义上下文处理器
+                'web.context_processors.navbar_context_processor',
             ],
         },
     },
@@ -155,6 +157,6 @@ UNICOM_MENU={
 
 
 UNICOM_PERMISSION={
-    "leader":{'home','tpl','tpl_edit','tpl_delete','my','my_add','my_add_plus','checkout','checkout_action','media','message'},
-    'user':{'home','my','my_add','my_add_plus','message'}
+    "leader":{'home','tpl','tpl_edit','tpl_delete','my','my_add','my_add_plus','checkout','checkout_action','media','message', 'mark_as_read', 'delete_message'},
+    'user':{'home','my','my_add','my_add_plus','message', 'mark_as_read', 'delete_message'}
 }

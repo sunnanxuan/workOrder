@@ -61,7 +61,7 @@ class Message(models.Model):
 
 
     class Meta:
-        ordering = ['-created_at']  # 按照创建时间倒序排序
+        ordering = ['is_read', '-created_at']  # 排序
 
 
 
