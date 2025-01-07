@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="" />
+    <list default="true" id="cc5a5189-d8bc-4ab1-ab3c-b31e827f05cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -40,6 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/nanxuansun/MyProject/workOrder/media/avatar/张三",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,6 +59,9 @@
       <recent name="$PROJECT_DIR$/web/static/images" />
       <recent name="$PROJECT_DIR$/web/templates" />
       <recent name="$PROJECT_DIR$/web/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/static/css" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,6 +109,7 @@
       <updated>1736032842029</updated>
       <workItem from="1736032844033" duration="249000" />
       <workItem from="1736033143557" duration="21210000" />
+      <workItem from="1736268409027" duration="5493000" />
     </task>
     <servers />
   </component>

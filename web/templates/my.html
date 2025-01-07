@@ -7,10 +7,6 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <span class="glyphicon glyphicon-th-list"></span> 我的工单
-
-            <a class="btn btn-success btn-xs " style="float: right;margin-left: 15px;" onclick="showAdd();">
-                <span class="glyphicon glyphicon-folder-open"></span> 创建工单
-            </a>
             <a class="btn btn-success btn-xs" style="float: right;" href="/my/add/">
                 <span class="glyphicon glyphicon-share"></span> 创建工单
             </a>
@@ -96,51 +92,5 @@
 
 
 {% block js %}
-    <script>
 
-        function showAdd() {
-            $('#myAddModal').modal('show');
-
-            $(".error-message").empty();
-        }
-
-        function hideAdd() {
-            $('#myAddModal').modal('hide');
-        }
-
-        function confirmAdd() {
-            //1.获取数据
-            var data = $("#myForm").serialize();
-
-
-            //2.1清楚错误信息
-            $(".error-message").empty();
-
-            //2.2发送请求
-            $.ajax({
-                url: "/my/add/plus/",
-                type: "POST",
-                data: data,
-                dataType: "JSON",
-
-                success: function (res) {
-
-                    if (res.status) {
-
-                        $('#myAddModal').modal('hide');
-                        location.href = location.href;
-                        //location.reload();
-                    } else {
-                        //{'status':False,'error':{'tpl':['这个字段不能为空']}}
-                        //alert("创建失败")
-                        $.each(res.error, function (key, valueList) {
-                            console.log(key, valueList);
-                            $('#id_' + key).next().text(valueList[0])
-                        })
-                    }
-                }
-            })
-
-        }
-    </script>
 {% endblock %}
