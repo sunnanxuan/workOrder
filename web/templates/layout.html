@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     {% block css %}{% endblock %}
 </head>
 <body>
@@ -32,12 +33,22 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">{{ request.unicom_username }} <span class="caret"></span></a>
+                       aria-expanded="false" style="position: relative;">
+                        {{ request.unicom_username }}
+                        {% if unread_message_count > 0 %}
+                            <span class="badge-container">
+                    <span class="badge-red" style="background-color: red;">●</span>
+                </span>
+                        {% endif %}
+                        <span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/message/">消息
-                                {% if request.unread_message_count > 0 %}
-                                    <span class="badge" style="background-color: red;">●</span>
+                                {% if unread_message_count > 0 %}
+                                    <span class="badge-container">
+                                        <span class="badge-red" style="background-color: red;">●</span>
+                                    </span>
                                 {% endif %}
                             </a>
                         </li>

@@ -1,0 +1,14 @@
+.badge-container {
+    position: absolute;
+    top: 3px;  /* 更紧密地靠近用户名文字 */
+    right: 18px; /* 更紧密地靠近用户名文字 */
+}
+
+.badge-red {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    vertical-align: middle;
+}
