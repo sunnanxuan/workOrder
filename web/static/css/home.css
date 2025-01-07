@@ -1,0 +1,22 @@
+h1 {
+    font-size: 4em;
+    color: #2c3e50;
+    text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5); /* 向右下方移动更多 */
+    position: relative; /* 设置相对定位 */
+    top: 50px; /* 向下移动20px */
+    left: 100px;
+}
+
+
+.checkin {
+    position: relative;
+    top: 60px; /* 向下移动20px */
+    left: 520px;
+    font-size: 1em;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.checkin:hover {
+    text-decoration: underline;
+}
